@@ -1,0 +1,5 @@
+dt = input()
+dt = dt.split("/")
+print( dt[1] + "/" + dt[0] + "/" + dt[2] )
+print( dt[2] + "/" + dt[1] + "/" + dt[0] )
+print( dt[0] + "-" + dt[1] + "-" + dt[2] )
