@@ -15,7 +15,6 @@ bool igual(int vagao[],int seq[], int n1){
 
 int cadeobixo(int vagao[],int x){
 	for(int i = 0;i < sizeof(vagao)/sizeof(vagao[0]); i++){
-		cout << vagao[i] << " ";
 		if(x == vagao[i]){
 			return i;
 		}
@@ -45,11 +44,8 @@ int main(){
 		}else{
 			i = n1-1;
 			int j = cadeobixo(vagao, seq[i]), temp, times = 0;
-			cout << "esse " << j << '\n';
 			while(i > 0){
                 if(vagao[i] != seq[i]){
-                    cout << vagao[j] << '\n';
-                    cout << "esse " << j << '\n1';
                     temp = vagao[j];
                     vagao[j] = vagao[j+1];
                     vagao[j+1] = temp;

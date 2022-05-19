@@ -17,6 +17,18 @@ int main(){
         }else {
             cout << "Not Prime" << endl;
         }
+        for(i = 0;i < asdf; i++){
+            asdf
+        }
+        if(asdf){
+            asdf
+        }else if(asd){
+            asdf
+        }else{
+            else if
+        while(asdf){
+            asd
+        }
     }
     
     /*
