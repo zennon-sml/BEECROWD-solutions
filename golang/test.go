@@ -2,13 +2,22 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
+func MAE() string { //return a message according with the time(Morning, Afternoon, Evening)
+	now := time.Now()
+	if now.Hour() > 4 && now.Hour() < 12 {
+		return "its " + now.Format("15:04") + " in this beautifull Morning\n"
+	} else if now.Hour() > 12 && now.Hour() < 18 {
+		return "its " + now.Format("15:04") + " in this beautifull Afternoon\n"
+	} else {
+		return "its " + now.Format("15:04") + " in this beautifull Evening\n"
+	}
+}
+
 func main() {
-	baldes := []int{9, 10, 7, 3, 6, 11, 5, 1, 4, 2, 8}
-	maior := 0
-	test := baldes[maior]
-	copy(baldes[maior:], baldes[maior+1:]) //deixo o valor do maior igual ao proximo
-	baldes[len(baldes)-1] = test
-	fmt.Println(baldes)
+	now := time.Now()
+	fmt.Println(now.Format("Monday 02-01-2006 15:04:05"))
+	fmt.Printf(MAE())
 }
