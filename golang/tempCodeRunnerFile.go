@@ -1,1 +1,1 @@
-true
+lista[j][i]

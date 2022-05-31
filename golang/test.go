@@ -16,8 +16,14 @@ func MAE() string { //return a message according with the time(Morning, Afternoo
 	}
 }
 
+type consumo struct {
+	pess float64
+	agua float64
+}
+
 func main() {
-	now := time.Now()
-	fmt.Println(now.Format("Monday 02-01-2006 15:04:05"))
-	fmt.Printf(MAE())
+	dick := consumo{pess: 1, agua: 2}
+	fmt.Println(dick.pess)
+	fmt.Println(dick.agua)
+
 }

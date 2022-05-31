@@ -21,7 +21,7 @@ func main() {
 	// layout := "2006-01-02T15:04:05.000Z"
 	for true {
 		fmt.Scanf("%d%d%d%d", &h1, &m1, &h2, &m2)
-		if h1 == 0 && h2 == 0 && m1 == 0 && m2 == 0 {
+		if h1+h2+m1+m2 == 0 {
 			break
 		}
 		// dormir := toTime(h1, m1)
@@ -32,11 +32,10 @@ func main() {
 		// fmt.Println(diff)
 		dormir := h1*60 + m1
 		acordar := h2*60 + m2
-		if dormir > acordar {
-			acordar += 1440
-		}
 		if acordar == dormir {
 			fmt.Println("1440")
+		} else if dormir > acordar {
+			fmt.Println((acordar + 1440) - dormir)
 		} else {
 			fmt.Println(acordar - dormir)
 		}
