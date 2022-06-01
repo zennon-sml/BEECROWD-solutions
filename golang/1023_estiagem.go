@@ -11,10 +11,6 @@ type Consumo struct {
 	tagua float64
 }
 
-func Round(x, uint float64) float64{
-	return math.Round(x/uint) * uint
-}
-
 func main() {
 	var n int
     count := 0
