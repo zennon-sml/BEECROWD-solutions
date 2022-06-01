@@ -1,1 +1,2 @@
-lista[j][i]
+
+		} else if y < 97 && x > 96 {
