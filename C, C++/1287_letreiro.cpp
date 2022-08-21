@@ -1,27 +1,47 @@
 #include <iostream>
 #include <string>
+#include <climits>
 using namespace std;
 
-void limpar(string num){
+string limpar(string num){
     int i, n;
     string limpa = "";
     for(i = 0;i < num.length(); i++){
-        if(num[i] > -1 && num[i] < 10){
+        if(num[i] > 47 && num[i] < 58){
             limpa += num[i];
-        }else if(num[i] == 79 || num[i] == 111){
-            limpa += char(0); 
-        }else if(num[i] == 108){
-            limpa += char(1);
+        }else if(num[i] == char(79) || num[i] == char(111)){
+            limpa += "0"; 
+        }else if(num[i] == char(108)){
+            limpa += "1";
         }
     }
-    cout << limpa << '\n';
+    return limpa;
 }
 
 int main() {
     string inteiro;
+    int valor;
     while(true){
-        getline(cin, inteiro);
-        limpar(inteiro);
+        try{
+            getline(cin, inteiro);
+            inteiro = limpar(inteiro);
+            if(inteiro.length() == -1){
+                cout << "error" << '\n';
+            }else{
+                try{
+                    valor = stoi(inteiro);
+                    if(valor > INT_MAX){
+                        cout << "error" << '\n';
+                    }else{
+                        cout << valor << '\n';
+                    }
+                }catch(const out_of_range& e){
+                    cout << "error" << '\n';
+                }
+            }
+        }catch(const exception& e){
+            break;
+        }
     }
 //    num = stoi(str);
    return 0;
