@@ -21,11 +21,9 @@ string limpar(string num){
 int main() {
     string inteiro;
     int valor;
-    while(true){
-        try{
-            getline(cin, inteiro);
+    while(getline(cin, inteiro)){
             inteiro = limpar(inteiro);
-            if(inteiro.length() == -1){
+            if(inteiro.length() == 0){
                 cout << "error" << '\n';
             }else{
                 try{
@@ -39,9 +37,6 @@ int main() {
                     cout << "error" << '\n';
                 }
             }
-        }catch(const exception& e){
-            break;
-        }
     }
 //    num = stoi(str);
    return 0;
