@@ -1,0 +1,16 @@
+while True:
+    a, b = map(int, input().split())
+    if a != 0 and b != 0:
+        c = str(int(12*a/360))
+        d = str(int(60*b/360))
+        if int(c) < 10 and int(d) < 10:
+            print("0"+c+":"+"0"+d)
+        elif int(c) < 10:
+            print("0"+c+":"+d)
+        elif int(d) < 10:
+            print(c+":"+"0"+d)
+        else:
+            print(c+":"+d)
+    else:
+        print("00:00")
+        break
