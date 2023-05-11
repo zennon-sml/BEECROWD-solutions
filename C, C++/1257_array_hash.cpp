@@ -14,7 +14,7 @@ int main(){
             cin >> letras;
             for(int j1 = 0;j1 < strlen(letras);j1++){
                 t += (int(letras[j1]) - 65) + j + j1;
-                // cout << int(letras[j1]) - 65 << " " << i <<" "<< j1 << "\n"; 
+                cout << int(letras[j1]) - 65 << " " << i <<" "<< j1 << "\n"; 
             }
         }
         cout << t << "\n";
