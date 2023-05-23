@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int[] deletarV(int v[], int size, int kill){
+void deletarV(int v[], int size, int kill){
     int nV[size-1];
     int nIndex = 0;
     for(int i = 0;i < size;i++){
@@ -13,13 +13,12 @@ int[] deletarV(int v[], int size, int kill){
             nIndex++;
         }
     }
-    return nV;
 }
 
-int papocar1(int v[], int size){
+void papocar1(int v[], int size){
     int place = 0;
+    bool par_impar;
     for(int i = 0;i < size;i++){
-        bool par_impar;
         if(v[place] % 2 == 0){
             par_impar = true;
         }else{
@@ -28,10 +27,25 @@ int papocar1(int v[], int size){
         while(v[place] > size){
             v[place] = v[place] % size;
         }
+        int papocado;
         for(int j = 0;j < size;j++){
             if(par_impar){
-                int place1 = size-v[place];
-                v[place1] = 0;
+                if(v[place] + place > size){
+                    papocado = (v[place] + place) - size;  
+                }else{
+                    papocado = v[place];
+                }
+                while(v[papocado] == 0){
+                    if(papocado > size){
+                        papocado = 0;
+                    }else{
+                        papocado ++;
+                    }
+                }
+                v[papocado] = 0;
+                cout << papocado << "\n";
+            }else{
+                cout << "impar" << "\n";
             }
         }
     }
@@ -45,6 +59,7 @@ int main(){
         for(int i = 0;i < n;i++){
             cin >> p[i] >> values[i];
         }
+        papocar1(values, n);
     }
 
     return 0;  
