@@ -1,17 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	var arr [100]string
+	var arr [100]float64
 	for i := 0; i < 100; i++ {
 		fmt.Scan(&arr[i])
-	}
-	j := 0
-	for i := 0; i < 100; i++ {
-		if arr[i][0] == "-" {
-			arr[j] = arr[i]
-			j++
-		} elif 
+		if arr[i] <= 10 {
+			fmt.Printf("A[%d] = %.1f\n", i, arr[i])
+		}
 	}
 }
